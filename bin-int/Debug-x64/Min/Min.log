@@ -1,8 +1,0 @@
-﻿  Application.cpp
-  Log.cpp
-c:\dev\min\min\src\min\log.h(26): warning C4251: 'Min::Log::core_logger_': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Min::Log'
-  c:\dev\min\min\vendor\spdlog\include\spdlog\logger.h(158): note: see declaration of 'std::shared_ptr<spdlog::logger>'
-c:\dev\min\min\src\min\log.h(27): warning C4251: 'Min::Log::client_logger_': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Min::Log'
-  c:\dev\min\min\vendor\spdlog\include\spdlog\logger.h(158): note: see declaration of 'std::shared_ptr<spdlog::logger>'
-  Generating Code...
-  Min.vcxproj -> C:\Dev\Min\bin\Debug-x64\Min\Min.dll
