@@ -12,7 +12,7 @@ int main(int argc, char** argv)
 	//Min::Log::GetCoreLogger()->trace("hello");
 	MIN_CORE_WARN("Initialized Log!");
 	//wchar_t a = 5;
-	//spdlog::error("Some error message with arg: {}");
+	spdlog::error("Some error message with arg: {}");
 	//std::string b = "dsjfkla;dsjao;";
 	//MIN_INFO(b);
 	//MIN_INFO("Hello! Var={0}",a);

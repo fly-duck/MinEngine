@@ -1,4 +1,4 @@
-workspace "Hazel"
+workspace "Min"
 	architecture "x64"
 	startproject "Sandbox"
 
@@ -12,27 +12,27 @@ workspace "Hazel"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
-IncludeDir = {}
-IncludeDir["GLFW"] = "Hazel/vendor/GLFW/include"
-IncludeDir["Glad"] = "Hazel/vendor/Glad/include"
-IncludeDir["ImGui"] = "Hazel/vendor/imgui"
-IncludeDir["glm"] = "Hazel/vendor/glm"
+-- IncludeDir = {}
+-- IncludeDir["GLFW"] = "Min/vendor/GLFW/include"
+-- IncludeDir["Glad"] = "Min/vendor/Glad/include"
+-- IncludeDir["ImGui"] = "Min/vendor/imgui"
+-- IncludeDir["glm"] = "Min/vendor/glm"
 
-include "Hazel/vendor/GLFW"
-include "Hazel/vendor/Glad"
-include "Hazel/vendor/imgui"
+-- include "Min/vendor/GLFW"
+-- include "Min/vendor/Glad"
+-- include "Min/vendor/imgui"
 
-project "Hazel"
-	location "Hazel"
+project "Min"
+	location "Min"
 	kind "SharedLib"
 	language "C++"
 	staticruntime "off"
 
-	tar getdir ("bin/" .. outputdir .. "/%{prj.name}")
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	pchheader "hzpch.h"
-	pchsource "Hazel/src/hzpch.cpp"
+	-- pchheader "hzpch.h"
+	-- pchsource "Min/src/hzpch.cpp"
 
 	files
 	{
@@ -46,18 +46,18 @@ project "Hazel"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		-- "%{IncludeDir.GLFW}",
+		-- "%{IncludeDir.Glad}",
+		-- "%{IncludeDir.ImGui}",
+		-- "%{IncludeDir.glm}"
 	}
 
 	links 
 	{ 
-		"GLFW",
-		"Glad",
-		"ImGui",
-		"opengl32.lib"
+		-- "GLFW",
+		-- "Glad",
+		-- "ImGui",
+		-- "opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -66,8 +66,8 @@ project "Hazel"
 
 		defines
 		{
-			"HZ_PLATFORM_WINDOWS",
-			"HZ_BUILD_DLL",
+			"MIN_PLATFORM_WINDOWS",
+			"MIN_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
 
@@ -77,17 +77,17 @@ project "Hazel"
 		}
 
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "MIN_DEBUG"
 		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "MIN_RELEASE"
 		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
-		defines "HZ_DIST"
+		defines "MIN_DIST"
 		runtime "Release"
 		optimize "On"
 
@@ -108,15 +108,15 @@ project "Sandbox"
 
 	includedirs
 	{
-		"Hazel/vendor/spdlog/include",
-		"Hazel/src",
-		"Hazel/vendor",
-		"%{IncludeDir.glm}"
+		"Min/vendor/spdlog/include",
+		"Min/src",
+		"Min/vendor",
+		-- "%{IncludeDir.glm}"
 	}
 
 	links
 	{
-		"Hazel"
+		"Min"
 	}
 
 	filter "system:windows"
@@ -125,20 +125,20 @@ project "Sandbox"
 
 		defines
 		{
-			"HZ_PLATFORM_WINDOWS"
+			"MIN_PLATFORM_WINDOWS"
 		}
 
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "MIN_DEBUG"
 		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "MIN_RELEASE"
 		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
-		defines "HZ_DIST"
+		defines "MIN_DIST"
 		runtime "Release"
 		optimize "On"
