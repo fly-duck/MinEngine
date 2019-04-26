@@ -19,6 +19,11 @@
       <Filter>Min</Filter>
     </ClInclude>
     <ClInclude Include="src\Min_Engine.h" />
+    <ClInclude Include="src\Min\Event\Event.h" />
+    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\Min\Event\KeyBoardEvent.h" />
+    <ClInclude Include="src\Min\Event\MouseEvent.h" />
+    <ClInclude Include="src\Min\Event\ApplicationEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Min\Application.cpp">

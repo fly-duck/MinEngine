@@ -146,8 +146,13 @@
     <ClInclude Include="src\Min\Application.h" />
     <ClInclude Include="src\Min\Core.h" />
     <ClInclude Include="src\Min\EntryPoint.h" />
+    <ClInclude Include="src\Min\Event\ApplicationEvent.h" />
+    <ClInclude Include="src\Min\Event\Event.h" />
+    <ClInclude Include="src\Min\Event\KeyBoardEvent.h" />
+    <ClInclude Include="src\Min\Event\MouseEvent.h" />
     <ClInclude Include="src\Min\Log.h" />
     <ClInclude Include="src\Min_Engine.h" />
+    <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Min\Application.cpp" />
